@@ -1,0 +1,248 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+
+    --main-color: #007bff;
+    --secound-color: #008fff;
+    --other-color: #c7a762;
+    --background-color: #00238e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+h1 {
+    font-size: 4vmax;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3vmax;
+}
+
+h3 {
+    font-size: 2.8vmax;
+}
+
+p {
+    font-size: 2vmax;
+}
+
+a {
+    position: relative;
+    cursor: pointer;
+}
+
+button {
+    background-color: var(--other-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border: none;
+    border-top: 3px double var(--black-color);
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+hr::after {
+    background: var(--white-color);
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+
+section > * {
+    padding: 2vmax;
+}
+/* END GLOBAL VARIABLES */
+
+/* BROAD CLASSES */
+.text_align_ctr {
+    text-align: center;
+}
+
+.text_align_ltr {
+    text-align: left;
+}
+
+.no_effect_a {
+    color: inherit; /* Use the default text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.input_long_text {
+    border: 3px solid var(--other-color);
+    border-radius: 5px;
+    height: 50px;
+    line-height: normal;
+    color: #282828;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    user-select: auto;
+    font-size: 16px;
+    padding: 0 6px;
+    padding-left: 12px;
+}
+
+/*  STICKY NAVIGATION BAR */
+nav {
+    width: 100%;
+    height: fit-content;
+    min-height: 7vmax;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* BACK ARROW RELATED */
+#back_arrow {
+    height: 2vmax;
+    width: 2vmax;
+    border: solid var(--black-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+#logo_h1_title {
+    font-size: 4vmax;
+    animation: skew_sideways 5s 2s none;
+}
+@keyframes skew_sideways {
+    0% {
+        transform: skewX(0); /* Start with no skew */
+    }
+    25% {
+        transform: skewX(-20deg); /* Skew to the left */
+    }
+    50% {
+        transform: skewX(0deg); /* Skew to the middle */
+    }
+    75% {
+        transform: skewX(20deg); /* Skew to the right */
+    }
+    100% {
+        transform: skewX(0deg); /* Skew back to center */
+    }
+}
+
+/* Person logo on the navigation bar */
+#profile_button {
+    width: 6vmax;
+    height: 6vmax;
+    border-radius: 70%;
+    background-color: var(--main-color);
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform 1s ease-in-out;
+}
+
+#profile_button:hover {
+    transform: scale(2.2);
+}
+
+#profile_button:active {
+    transform: scale(-0.9);
+}
+/* END NAVBAR */
+
+/* MAIN SCREEN */
+main {
+    max-width: 100vmax;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    padding-top: 1vmax;
+}
+
+.main_single_container {
+    height: fit-content;
+    width: 80vmax;
+    padding: 7vmax;
+    border: 0.2vmax solid var(--other-color);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.main_single_container > * {
+    padding: 1.2vmax;
+}
+
+.main_single_container > form > * {
+    padding: 1.2vmax;
+}
+
+#bool_button_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vmax;
+}
+
+/* MOVIES */
+.movie_card {
+    border: #0056b3 solid 0.2vmax;
+    margin: 2vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.movie_title {
+    color: #333;
+    margin: 2vmax;
+}
+
+.movie_description {
+    text-align: left;
+    color: #555;
+    margin: 2vmax;
+}
+
+.movie_price {
+    color: #777;
+    margin: 2vmax;
+}
+
+.buy_button {
+    margin: 2vmax;
+    align-items: center;
+}
+
+/* Movie */
+.non_clickable {
+    align-self: center;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+#single_movie_main > * {
+    margin: 2vmax;
+}
